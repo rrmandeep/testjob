@@ -1,0 +1,20 @@
+<html>
+	<head>
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+	</head>
+	<body class="">
+	  <div class="box" style="max-width: 800px;margin: auto;padding: 30px;border: 1px solid #eee;box-shadow: 0 0 10px rgba(0, 0, 0, .15);font-size: 16px;line-height: 24px;, color: #555;">
+	  	<div align="center">
+		    <div>
+		      <%= form_tag('/sender', multipart: true) do %>
+						<%= fields_for :form_fields do |f| %>
+						  File to Upload <%= f.file_field :file, required: true %><br><br>
+						  User Emails <%= f.text_area :emails, :rows=>2, :cols=>40, placeholder: "mail@mail.com,test@mail.com", required: true %><br><br>
+						  <%= submit_tag("Submit", class: "btn btn-primary btn-xm") %>
+						<% end %>
+					<% end %>
+		    </div>
+	  	</div>
+		</div>
+	</body>
+</html>
